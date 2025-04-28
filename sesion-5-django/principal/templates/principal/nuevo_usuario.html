@@ -1,0 +1,10 @@
+{% extends 'principal/base.html' %} {% block content %}
+<h3>DATOS DE USUARIO</h3>
+<p>Nombre: {{ nombre }}</p>
+<p>Apellido: {{ apellido }}</p>
+<p>Fecha de nacimiento: {{ fecha_nacimiento }}</p>
+<p>Genero: {{ genero }}</p>
+
+<a href="{% url 'nuevo-usuario' %}">Registrar nuevo usuario</a>
+
+{% endblock %}
