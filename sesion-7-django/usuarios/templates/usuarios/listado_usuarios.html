@@ -1,0 +1,31 @@
+{% extends 'usuarios/base.html' %} {% block main %}
+<h2>LISTA DE USUARIOS</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Nro.</th>
+      <th>Nombre de usuario</th>
+      <th>Correo electrónico</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for usuario in usuarios %}
+    <tr>
+      <th>{{ usuario.id }}</th>
+      <td>{{ usuario.username }}</td>
+      <td>{{ usuario.email }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- <ol>
+  {% for usuario in usuarios %}
+  <li>
+    <strong>Usuario:</strong> {{ usuario.username }} - {{ usuario.email }}
+  </li>
+  {% endfor %}
+</ol> -->
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'publicaciones/base.html' %} {% block main %}
+<h2>LISTA DE PUBLICACIONES</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Nro.</th>
+      <th>Titulo</th>
+      <th>Contenido</th>
+      <th>Fecha de creación</th>
+      <th>Usuario</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for publicacion in publicaciones%}
+    <tr>
+      <th>{{ publicacion.id }}</th>
+      <td>{{ publicacion.titulo }}</td>
+      <td>{{ publicacion.contenido }}</td>
+      <td>{{ publicacion.fecha_creacion }}</td>
+      <td>{{ publicacion.autor }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
