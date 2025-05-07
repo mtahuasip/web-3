@@ -1,0 +1,17 @@
+{% extends 'agenda/base.html' %} {% block main %}
+<h1>LISTADO DE AGENDA</h1>
+
+<ol>
+  {% for agenda in agendas %}
+
+  <li>
+    Nombre: {{ agenda.nombre }} <br />
+    Apellido: {{ agenda.apellido }} <br />
+    CI: {{ agenda.ci}} <br />
+    Teléfono: {{ agenda.telefono }} <br />
+    Correo: {{ agenda.correo }}
+  </li>
+  {% endfor %}
+</ol>
+
+{% endblock %}
