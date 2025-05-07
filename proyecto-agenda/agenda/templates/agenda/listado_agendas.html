@@ -1,17 +1,36 @@
 {% extends 'agenda/base.html' %} {% block main %}
-<h1>LISTADO DE AGENDA</h1>
+<section>
+  <h2>LISTADO DE AGENDA</h2>
 
-<ol>
-  {% for agenda in agendas %}
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>CI</th>
+        <th>Teléfono</th>
+        <th>Correo</th>
+      </tr>
+    </thead>
 
-  <li>
-    Nombre: {{ agenda.nombre }} <br />
-    Apellido: {{ agenda.apellido }} <br />
-    CI: {{ agenda.ci}} <br />
-    Teléfono: {{ agenda.telefono }} <br />
-    Correo: {{ agenda.correo }}
-  </li>
-  {% endfor %}
-</ol>
+    <tbody>
+      {% for agenda in agendas %}
+      <tr>
+        <td>{{ agenda.nombre }}</td>
+        <td>{{ agenda.apellido }}</td>
+        <td>{{ agenda.ci }}</td>
+        <td>{{ agenda.telefono }}</td>
+        <td>{{ agenda.correo }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="5">Total de registros: {{ agendas|length }}</td>
+      </tr>
+    </tfoot>
+  </table>
+</section>
 
 {% endblock %}
