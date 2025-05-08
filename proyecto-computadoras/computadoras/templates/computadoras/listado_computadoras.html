@@ -1,0 +1,36 @@
+{% extends 'computadoras/base.html' %} {% block main %}
+<section>
+  <h2>LISTADO DE COMPUTADORAS</h2>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Capacidad HDD</th>
+        <th>Capacidad RAM</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for computadora in computadoras %}
+      <tr>
+        <td>{{ computadora.modelo }}</td>
+        <td>{{ computadora.marca }}</td>
+        <td>{{ computadora.cap_hd }}</td>
+        <td>{{ computadora.cap_ram }}</td>
+        <td>{{ computadora.precio }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="5">Total de registros: {{ computadoras|length }}</td>
+      </tr>
+    </tfoot>
+  </table>
+</section>
+
+{% endblock %}
