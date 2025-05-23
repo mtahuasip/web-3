@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %} {% block content %}
+<h2>Eliminar publicación</h2>
+
+<p>¿Estas seguro de eliminar esta publicación?</p>
+
+<form method="POST">
+  {% csrf_token %}
+
+  <button type="submit">Si, eliminar</button>
+  <a href="{% url 'detalle_publicacion' publicacion.pk %}">Cancelar</a>
+</form>
+{% endblock %}
